@@ -8,11 +8,10 @@
 #else
 #include <unistd.h>
 #define sleep_ms(ms) usleep((ms) * 1000)
-
 #endif
 
 
-void print_animate(const char text[], int delay)
+void print_animate(char text[], int delay)
 {
     for (int i = 0; i < strlen(text); i++)
     {
@@ -23,7 +22,7 @@ void print_animate(const char text[], int delay)
     printf("\n");
 }
 
-int get_input(char prompt[], float delay)
+void get_input(char prompt[], float delay)
 {
     print_animate(prompt, delay);
     char input[10];
