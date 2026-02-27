@@ -3,6 +3,6 @@
 
 int main(void)
 {
-    print_animate("Hi hello good morning!", 1);
+    print_animate("Hi hello good morning!", 10);
     return 0;
 }

@@ -1,4 +1,6 @@
-.PHONY: build rebuild compile run
+.PHONY: all build rebuild compile run
+
+all: run
 
 ifeq ($(OS),Windows_NT)
     OS_NAME := windows
