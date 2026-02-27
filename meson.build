@@ -13,5 +13,4 @@ executable(
   'C-RPG',
   srcs,
   include_directories : include,
-  install : false
 )
