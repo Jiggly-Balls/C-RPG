@@ -54,3 +54,9 @@ dkms.conf
 # Clangd files
 compile_commands.json
 .cache/
+
+# Meson
+build/
+
+# IDE settings
+.vscode/
