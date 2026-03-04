@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <string.h>
 
 #ifdef _WIN32
@@ -11,7 +12,7 @@
 #endif
 
 
-void print_animate(char text[], int delay)
+void print_animate(char *text, int delay)
 {
     for (int i = 0; i < strlen(text); i++)
     {
@@ -22,8 +23,10 @@ void print_animate(char text[], int delay)
     printf("\n");
 }
 
-void get_input(char prompt[], float delay)
+char *get_input(char *prompt, int delay, int size)
 {
     print_animate(prompt, delay);
-    char input[10];
+    char *input_ptr = malloc(sizeof(char) * size);
+    fgets(input_ptr, size, stdin);
+    return input_ptr;
 }
