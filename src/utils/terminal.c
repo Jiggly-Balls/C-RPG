@@ -1,5 +1,6 @@
 #include <stdarg.h>
 #include <stdbool.h>
+#include <stddef.h>
 #include <stdio.h>
 #include <string.h>
 
@@ -11,8 +12,6 @@
 #include <unistd.h>
 #define sleep_ms(ms) usleep((ms) * 1000)
 #endif
-
-#define MAX_INPUT_SIZE 50
 
 
 void printa(char *text, int delay, ...)
@@ -44,7 +43,7 @@ void printa(char *text, int delay, ...)
             }
             if (text[index] == 'c')
             {
-                printf("%c", va_arg(args, char*));
+                printf("%c", va_arg(args, int));
                 continue;
             }
             placeholder = false;
@@ -58,9 +57,9 @@ void printa(char *text, int delay, ...)
     va_end(args);
 }
 
-void get_input(char *prompt_ptr, char *input_ptr, int delay)
+void get_input(char *prompt_ptr, char *input_ptr, size_t buffer_size, int delay)
 {
     printa(prompt_ptr, delay);
-    fgets(input_ptr, MAX_INPUT_SIZE, stdin);
+    fgets(input_ptr, buffer_size, stdin);
     input_ptr[strcspn(input_ptr, "\n")] = 0;
 }
