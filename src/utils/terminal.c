@@ -23,10 +23,9 @@ void printa(char *text, int delay)
     printf("\n");
 }
 
-char *get_input(char *prompt, int delay, int size)
+void get_input(char *prompt_ptr, char *input_ptr, int delay, int size)
 {
-    printa(prompt, delay);
-    char *input_ptr = malloc(sizeof(char) * size);
+    printa(prompt_ptr, delay);
     fgets(input_ptr, size, stdin);
-    return input_ptr;
+    input_ptr[strcspn(input_ptr, "\n")] = 0;
 }
