@@ -12,7 +12,7 @@
 #endif
 
 
-void print_animate(char *text, int delay)
+void printa(char *text, int delay)
 {
     for (int i = 0; i < strlen(text); i++)
     {
@@ -25,7 +25,7 @@ void print_animate(char *text, int delay)
 
 char *get_input(char *prompt, int delay, int size)
 {
-    print_animate(prompt, delay);
+    printa(prompt, delay);
     char *input_ptr = malloc(sizeof(char) * size);
     fgets(input_ptr, size, stdin);
     return input_ptr;

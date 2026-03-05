@@ -5,11 +5,11 @@
 
 int main(void)
 {
-    print_animate("Hi hello good morning!", 10);
+    printa("Hi hello good morning!", 10);
 
     char *name = get_input("Enter your name: ", 10, 10);
-    print_animate("Your name is: ", 10);
-    print_animate(name, 10);
+    printa("Your name is: ", 10);
+    printa(name, 10);
 
     free(name);
 
