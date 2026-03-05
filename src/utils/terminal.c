@@ -12,6 +12,8 @@
 #define sleep_ms(ms) usleep((ms) * 1000)
 #endif
 
+#define MAX_INPUT_SIZE 50
+
 
 void printa(char *text, int delay, ...)
 {
@@ -56,9 +58,9 @@ void printa(char *text, int delay, ...)
     va_end(args);
 }
 
-void get_input(char *prompt_ptr, char *input_ptr, int delay, int size)
+void get_input(char *prompt_ptr, char *input_ptr, int delay)
 {
     printa(prompt_ptr, delay);
-    fgets(input_ptr, size, stdin);
+    fgets(input_ptr, MAX_INPUT_SIZE, stdin);
     input_ptr[strcspn(input_ptr, "\n")] = 0;
 }
