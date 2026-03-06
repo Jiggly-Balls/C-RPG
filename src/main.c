@@ -1,8 +1,8 @@
-#include "game/game.h"
+#include "game/menu.h"
 
 
 int main(void)
 {
-    game();
+    menu();
     return 0;
 }
