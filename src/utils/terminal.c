@@ -29,13 +29,12 @@ void typewrite(char *text, int delay, ...)
         fflush(stdout);
         sleep_ms(delay);
     }
-    printf("\n");
-    
 }
 
 void get_input(char *prompt, char *input, size_t buffer_size, int delay)
 {
     typewrite(prompt, delay);
+    typewrite("\n>>> ", delay);
     fgets(input, buffer_size, stdin);
     input[strcspn(input, "\n")] = 0;
 }
