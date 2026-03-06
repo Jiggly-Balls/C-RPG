@@ -57,9 +57,9 @@ void printa(char *text, int delay, ...)
     va_end(args);
 }
 
-void get_input(char *prompt_ptr, char *input_ptr, size_t buffer_size, int delay)
+void get_input(char *prompt, char *input, size_t buffer_size, int delay)
 {
-    printa(prompt_ptr, delay);
-    fgets(input_ptr, buffer_size, stdin);
-    input_ptr[strcspn(input_ptr, "\n")] = 0;
+    printa(prompt, delay);
+    fgets(input, buffer_size, stdin);
+    input[strcspn(input, "\n")] = 0;
 }
