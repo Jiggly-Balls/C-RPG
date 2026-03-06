@@ -3,7 +3,7 @@
 
 
 void menu(void) {
-    char input[4];
+    char input[10];
 
     while (1) {
         get_input(
@@ -12,13 +12,13 @@ void menu(void) {
             "\n2) Settings"
             "\n3) Exit",
             input,
-            4,
+            10,
             TEXT_DELAY
         );
 
         if (input[1] != '\0') {
-            typewrite("Please enter a valid option.", TEXT_DELAY);
-            continue;
+            interact("Please enter a valid option.", TEXT_DELAY);
+            clear_terminal();
         }
 
         else if (*input == '1') {
@@ -34,7 +34,8 @@ void menu(void) {
         }
 
         else {
-            typewrite("Invalid option", TEXT_DELAY);
+            interact("Invalid option", TEXT_DELAY);
+            clear_terminal();
         }
     }
 }

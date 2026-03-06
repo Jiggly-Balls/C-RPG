@@ -38,3 +38,16 @@ void get_input(char *prompt, char *input, size_t buffer_size, int delay)
     fgets(input, buffer_size, stdin);
     input[strcspn(input, "\n")] = 0;
 }
+
+void clear_terminal(void) {
+    printf("\033[2J\033[H");
+    fflush(stdout);
+}
+
+void interact(char *prompt, int delay) {
+    char buffer[2];
+
+    typewrite(prompt, delay);
+    typewrite("\nPress Enter to continue\n", delay);
+    fgets(buffer, 2, stdin);
+}

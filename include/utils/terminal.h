@@ -7,5 +7,7 @@
 
 void typewrite(char *text, int delay, ...);
 void get_input(char *prompt, char *input, size_t buffer_size, int delay);
+void clear_terminal(void);
+void interact(char *prompt, int delay);
 
 #endif
