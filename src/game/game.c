@@ -6,6 +6,6 @@ void game(void) {
     int text_delay = 30;
 
     get_input("Enter your name: ", name, 50, text_delay);
-    printa("Your name is: %s", text_delay, name);
+    typewrite("Your name is: %s", text_delay, name);
 
 }

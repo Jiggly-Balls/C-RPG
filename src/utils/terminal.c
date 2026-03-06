@@ -14,7 +14,7 @@
 #endif
 
 
-void printa(char *text, int delay, ...)
+void typewrite(char *text, int delay, ...)
 {
     char buffer[1024];
     va_list args;
@@ -35,7 +35,7 @@ void printa(char *text, int delay, ...)
 
 void get_input(char *prompt, char *input, size_t buffer_size, int delay)
 {
-    printa(prompt, delay);
+    typewrite(prompt, delay);
     fgets(input, buffer_size, stdin);
     input[strcspn(input, "\n")] = 0;
 }
