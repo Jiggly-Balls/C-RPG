@@ -10,6 +10,7 @@ srcs = [
   'src/main.c',
   'src/utils/terminal.c',
   'src/game/game.c',
+  'src/game/menu.c',
 ]
 
 executable(
