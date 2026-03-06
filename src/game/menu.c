@@ -3,7 +3,7 @@
 
 
 void menu(void) {
-    char input[10];
+    char input[3];
 
     while (1) {
         get_input(
@@ -12,7 +12,7 @@ void menu(void) {
             "\n2) Settings"
             "\n3) Exit",
             input,
-            10,
+            3,
             TEXT_DELAY
         );
 
