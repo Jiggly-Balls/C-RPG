@@ -7,5 +7,5 @@ void game(void) {
 
     get_input("Enter your name: ", name, 50, text_delay);
     typewrite("Your name is: %s", text_delay, name);
-
+    interact("", TEXT_DELAY);
 }

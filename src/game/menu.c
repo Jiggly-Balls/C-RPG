@@ -7,7 +7,7 @@ void menu(void) {
 
     while (1) {
         get_input(
-            "Enter the option: "
+            "\nEnter the option: "
             "\n1) Play game"
             "\n2) Settings"
             "\n3) Exit",
