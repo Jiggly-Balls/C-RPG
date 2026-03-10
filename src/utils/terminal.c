@@ -38,9 +38,10 @@ void get_input(char *prompt, char *input, size_t buffer_size, int delay)
     fgets(input, buffer_size, stdin);
     input[strcspn(input, "\n")] = 0;
 
-    if (strlen(input) == buffer_size - 1) {
-        int c;
-        while ((c = getchar()) != '\n' && c != EOF);
+    if (buffer_size - 1 == strlen(input)) {
+      int c;
+      while ((c = getchar()) != '\n' && c != EOF)
+        ;
     }
 }
 
