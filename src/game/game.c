@@ -3,10 +3,10 @@
 
 void introduction(char *name) {
     clear_terminal();
-    typewrite("Hello there %s.", TEXT_DELAY, name);
+    typewrite("Hello there %s. ", TEXT_DELAY, name);
     typewrite("Your only goal in life is to be", TEXT_DELAY);
     for (int i = 0; i < 3; i++){
-        typewrite(".", TEXT_DELAY + 1000);
+        typewrite(".", 1000);
     }
     interact("a TRILLIONAIRE!", TEXT_DELAY);
 
