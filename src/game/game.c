@@ -4,7 +4,7 @@
 void introduction(char *name) {
     char scene_1[] = \
     "The year is 1347."
-    "\nThe world runs on gold, and those without it are forgotten by history.";
+    "\n\nThe world runs on gold, and those without it are forgotten by history.";
 
     char scene_2[] = \
     "You were once a respected merchant."
@@ -24,12 +24,11 @@ void introduction(char *name) {
     "\nIn your gut: a burning need to reclaim what was yours.";
 
     char scene_5[] = \
-    "\nYou swore that day that no one would ever have power over you again."
+    "You swore that day that no one would ever have power over you again."
     "\nYou will rebuild."
     "\nYou will grow."
-    "\nYou will become the wealthiest person"
-    "\nthis world has ever seen."
-    "\nA TRILLIONAIRE.";
+    "\nYou will become the wealthiest person this world has ever seen."
+    "\n\nA TRILLIONAIRE.";
 
     clear_terminal();
 
@@ -72,7 +71,8 @@ void game(void) {
 
     get_input(
         "Would you like to play the introduction? (y/n)",
-        play_intro, 3,
+        play_intro,
+        3,
         TEXT_DELAY
     );
     if (*play_intro == 'y') {
