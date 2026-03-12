@@ -2,18 +2,50 @@
 
 
 void introduction(char *name) {
-    clear_terminal();
-    typewrite("Hello there %s. ", TEXT_DELAY, name);
-    typewrite("Your only goal in life is to be", TEXT_DELAY);
-    for (int i = 0; i < 3; i++){
-        typewrite(".", 1000);
-    }
-    interact("a TRILLIONAIRE!", TEXT_DELAY);
+    char scene_1[] = \
+    "The year is 1347."
+    "\nThe world runs on gold, and those without it are forgotten by history.";
+
+    char scene_2[] = \
+    "You were once a respected merchant."
+    "\nCaravans, contracts, a name people trusted."
+    "\n\nThen one night on the road to Valdris... everything was taken from you.";
+
+    char scene_3[] = \
+    "Bandits. A dozen of them."
+    "\nThey took your cart. Your goods. Your horse."
+    "\nThey left you with nothing but the clothes on your back and the dirt beneath your feet.";
+
+    char scene_4[] = \
+    "You wake up in Millhaven."
+    "\nA small, forgettable town on the edge of nowhere."
+    "\n\nIn your pocket: 50 gold coins."
+    "\nOn your back: a worn leather satchel."
+    "\nIn your gut: a burning need to reclaim what was yours.";
+
+    char scene_5[] = \
+    "\nYou swore that day that no one would ever have power over you again."
+    "\nYou will rebuild."
+    "\nYou will grow."
+    "\nYou will become the wealthiest person"
+    "\nthis world has ever seen."
+    "\nA TRILLIONAIRE.";
 
     clear_terminal();
 
-    interact("Go from town to town and find out people's needs and exploit it!", TEXT_DELAY);
+    interact(scene_1, TEXT_DELAY);
+    clear_terminal();
 
+    interact(scene_2, TEXT_DELAY);
+    clear_terminal();
+
+    interact(scene_3, TEXT_DELAY);
+    clear_terminal();
+    
+    interact(scene_4, TEXT_DELAY);
+    clear_terminal();
+
+    interact(scene_5, TEXT_DELAY);
     clear_terminal();
 
     interact(
