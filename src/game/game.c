@@ -1,5 +1,29 @@
 #include "utils/terminal.h"
+#include "game/game.h"
 
+
+void game(void) {
+    char name[50];
+    char play_intro[3];
+
+    clear_terminal();
+    get_input("Enter your name: ", name, 50, TEXT_DELAY);
+    
+    typewrite("Your name is: %s", TEXT_DELAY, name);
+    interact("", TEXT_DELAY);
+
+    clear_terminal();
+
+    get_input(
+        "Would you like to play the introduction? (y/n)",
+        play_intro,
+        3,
+        TEXT_DELAY
+    );
+    if (*play_intro == 'y') {
+        introduction(name);
+    }
+}
 
 void introduction(char *name) {
     char scene_1[] = \
@@ -17,8 +41,7 @@ void introduction(char *name) {
     "\nThey left you with nothing but the clothes on your back and the dirt beneath your feet.";
 
     char scene_4[] = \
-    "You wake up in Millhaven."
-    "\nA small, forgettable town on the edge of nowhere."
+    "You wake up in a small, forgettable town on the edge of nowhere."
     "\n\nIn your pocket: 50 gold coins."
     "\nOn your back: a worn leather satchel."
     "\nIn your gut: a burning need to reclaim what was yours.";
@@ -54,28 +77,4 @@ void introduction(char *name) {
     );
 
     clear_terminal();
-}
-
-
-void game(void) {
-    char name[50];
-    char play_intro[3];
-
-    clear_terminal();
-    get_input("Enter your name: ", name, 50, TEXT_DELAY);
-    
-    typewrite("Your name is: %s", TEXT_DELAY, name);
-    interact("", TEXT_DELAY);
-
-    clear_terminal();
-
-    get_input(
-        "Would you like to play the introduction? (y/n)",
-        play_intro,
-        3,
-        TEXT_DELAY
-    );
-    if (*play_intro == 'y') {
-        introduction(name);
-    }
 }
