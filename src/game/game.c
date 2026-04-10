@@ -5,11 +5,18 @@
 void game(void) {
     char name[50];
     char play_intro[3];
+    char name_confirm = 'n';
 
-    clear_terminal();
-    get_input("Enter your name: ", name, 50, TEXT_DELAY);
+    while (name_confirm != 'y')
+    {
+        clear_terminal();
+        get_input("Enter your name: ", name, 50, TEXT_DELAY);
+        
+        typewrite("Your name is %s, are you sure of it? (y/n): ", TEXT_DELAY, name);
+        get_input(">>> ", &name_confirm, 2, TEXT_DELAY);
+    }
+    typewrite("Your name is %s.", TEXT_DELAY, name);
     
-    typewrite("Your name is: %s", TEXT_DELAY, name);
     interact("", TEXT_DELAY);
 
     clear_terminal();
