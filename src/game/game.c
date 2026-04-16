@@ -28,11 +28,11 @@ void game(void) {
         TEXT_DELAY
     );
     if (*play_intro == 'y') {
-        introduction(name);
+        introduction();
     }
 }
 
-void introduction(char *name) {
+void introduction(void) {
     char scene_1[] = \
     "The year is 1347."
     "\n\nThe world runs on gold, and those without it are forgotten by history.";
