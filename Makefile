@@ -1,4 +1,4 @@
-.PHONY: all build rebuild compile run
+.PHONY: all build rebuild compile run clean
 
 all: run
 
@@ -35,3 +35,10 @@ else
 endif
 
 	./$(TARGET)
+
+clean:
+ifeq ($(OS_NAME),windows)
+	rm -r -fo "build"
+else
+	rm -rf build
+endif
