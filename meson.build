@@ -17,4 +17,5 @@ executable(
   'C-RPG',
   srcs,
   include_directories : include,
+  c_args : ['-Wall', '-Wextra', '-pedantic-errors']
 )
