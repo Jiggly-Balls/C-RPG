@@ -32,7 +32,10 @@ void typewrite(char *text, int delay, ...)
 
 void get_input(char *prompt, char *input, size_t buffer_size, int delay)
 {
-    typewrite(prompt, delay);
+    if (prompt != NULL)
+    {
+        typewrite(prompt, delay);
+    }
     typewrite("\n>>> ", delay);
     fgets(input, buffer_size, stdin);
     input[strcspn(input, "\n")] = 0;
