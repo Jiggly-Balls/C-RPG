@@ -4,7 +4,8 @@
 #include "game/game.h"
 
 
-void game(void) {
+void game(void)
+{
     char name[50];
     char play_intro;
     char name_confirm = 'n';
@@ -36,12 +37,14 @@ void game(void) {
     );
     play_intro = (char)tolower((int)play_intro);
 
-    if (play_intro == 'y') {
+    if (play_intro == 'y')
+    {
         introduction();
     }
 }
 
-void introduction(void) {
+void introduction(void)
+{
     char scene_1[] = \
     "The year is 1347."
     "\n\nThe world runs on gold, and those without it are forgotten by history.";

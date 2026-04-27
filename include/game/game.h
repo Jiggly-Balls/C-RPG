@@ -4,7 +4,8 @@
 void game(void);
 void introduction(void);
 
-typedef struct {
+typedef struct
+{
     char name[50];
     int gold;
     int reputation;

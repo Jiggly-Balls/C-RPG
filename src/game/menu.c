@@ -2,7 +2,8 @@
 #include "utils/terminal.h"
 
 
-void menu(void) {
+void menu(void)
+{
     char input[3];
 
     while (1) {
@@ -15,24 +16,29 @@ void menu(void) {
             TEXT_DELAY
         );
 
-        if (input[1] != '\0') {
+        if (input[1] != '\0')
+        {
             interact("Please enter a valid option.", TEXT_DELAY);
             clear_terminal();
         }
 
-        else if (*input == '1') {
+        else if (*input == '1')
+        {
             game();
         }
 
-        else if (*input == '2') {
+        else if (*input == '2')
+        {
 
         }
 
-        else if (*input == '3') {
+        else if (*input == '3')
+        {
             break;
         }
 
-        else {
+        else
+        {
             interact("Invalid option", TEXT_DELAY);
             clear_terminal();
         }
