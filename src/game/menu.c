@@ -6,36 +6,36 @@
 
 void menu(void)
 {
-    char input[3];
+    char input;
 
-    while (1) {
+    while (true) {
         get_input(
             "\n1) Play game"
             "\n2) Settings"
             "\n3) Exit",
-            input,
-            3,
+            &input,
+            2,
             TEXT_DELAY,
             false
         );
 
-        if (input[1] != '\0')
-        {
-            interact("Please enter a valid option.", TEXT_DELAY);
-            clear_terminal();
-        }
+        // if (input != '\0')
+        // {
+        //     interact("Please enter a valid option.", TEXT_DELAY);
+        //     clear_terminal();
+        // }
 
-        else if (*input == '1')
+        if (input == '1')
         {
             game();
         }
 
-        else if (*input == '2')
+        else if (input == '2')
         {
 
         }
 
-        else if (*input == '3')
+        else if (input == '3')
         {
             break;
         }

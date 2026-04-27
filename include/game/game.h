@@ -1,16 +1,19 @@
 #ifndef _GAME_H
 #define _GAME_H
 
+#include <stdint.h>
+
 void game(void);
 void introduction(void);
 
-typedef struct
+struct Player
 {
     char name[50];
-    int gold;
-    int reputation;
-} Player;
+    int32_t gold;
+    int32_t reputation;
+    int32_t energy;
+};
 
-extern Player player;
+extern struct Player player;
 
 #endif
