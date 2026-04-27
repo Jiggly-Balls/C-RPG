@@ -1,3 +1,4 @@
+#include <ctype.h>
 #include <stdarg.h>
 #include <stdbool.h>
 #include <stddef.h>
@@ -32,7 +33,7 @@ void typewrite(char *text, int delay, ...)
     }
 }
 
-void get_input(char *prompt, char *input, size_t buffer_size, uint16_t delay)
+void get_input(char *prompt, char *input, size_t buffer_size, uint16_t delay, bool to_lower)
 {
     if (prompt != NULL)
     {
@@ -44,9 +45,18 @@ void get_input(char *prompt, char *input, size_t buffer_size, uint16_t delay)
 
     if (buffer_size - 1 == strlen(input))
     {
-      int c;
-      while ((c = getchar()) != '\n' && c != EOF)
-        ;
+        int c;
+        while ((c = getchar()) != '\n' && c != EOF)
+            ;
+    }
+
+    if (to_lower)
+    {
+        *input = tolower((int)*input);
+        while (*input++)
+        {
+            *input = tolower((int)*input);
+        }
     }
 }
 

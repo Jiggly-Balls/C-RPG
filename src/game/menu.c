@@ -1,5 +1,6 @@
 #include "game/game.h"
 #include "utils/terminal.h"
+#include <stdbool.h>
 
 
 void menu(void)
@@ -13,7 +14,8 @@ void menu(void)
             "\n3) Exit",
             input,
             3,
-            TEXT_DELAY
+            TEXT_DELAY,
+            false
         );
 
         if (input[1] != '\0')

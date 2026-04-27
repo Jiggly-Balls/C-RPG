@@ -1,5 +1,3 @@
-#include <ctype.h>
-
 #include "utils/terminal.h"
 #include "game/game.h"
 
@@ -13,16 +11,22 @@ void game(void)
     while (name_confirm != 'y')
     {
         clear_terminal();
-        get_input("Enter your name: ", name, 50, TEXT_DELAY);
+        get_input(
+            "Enter your name: ",
+            name,
+            50,
+            TEXT_DELAY,
+            false
+        );
         
         typewrite("Your name is %s.", TEXT_DELAY, name);
         get_input(
             " Are you sure of it? (y/n)",
             &name_confirm,
             2,
-            TEXT_DELAY
+            TEXT_DELAY,
+            true
         );
-        name_confirm = (char)tolower((int)name_confirm);
     }
     typewrite("Your name is %s.", TEXT_DELAY, name);
     
@@ -34,9 +38,9 @@ void game(void)
         "Would you like to play the introduction? (y/n)",
         &play_intro,
         3,
-        TEXT_DELAY
+        TEXT_DELAY,
+        true
     );
-    play_intro = (char)tolower((int)play_intro);
 
     if (play_intro == 'y')
     {
