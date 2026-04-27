@@ -18,13 +18,7 @@ void menu(void)
             TEXT_DELAY,
             false
         );
-
-        // if (input != '\0')
-        // {
-        //     interact("Please enter a valid option.", TEXT_DELAY);
-        //     clear_terminal();
-        // }
-
+        
         if (input == '1')
         {
             game();
