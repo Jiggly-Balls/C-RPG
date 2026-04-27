@@ -1,6 +1,7 @@
 #include <stdarg.h>
 #include <stdbool.h>
 #include <stddef.h>
+#include <stdint.h>
 #include <stdio.h>
 #include <string.h>
 
@@ -31,7 +32,7 @@ void typewrite(char *text, int delay, ...)
     }
 }
 
-void get_input(char *prompt, char *input, size_t buffer_size, int delay)
+void get_input(char *prompt, char *input, size_t buffer_size, uint16_t delay)
 {
     if (prompt != NULL)
     {
@@ -55,7 +56,7 @@ void clear_terminal(void)
     fflush(stdout);
 }
 
-void interact(char *prompt, int delay)
+void interact(char *prompt, uint16_t delay)
 {
     char buffer[2];
 
