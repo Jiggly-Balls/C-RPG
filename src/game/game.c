@@ -22,6 +22,7 @@ void game(void)
             2,
             TEXT_DELAY
         );
+        name_confirm = (char)tolower((int)name_confirm);
     }
     typewrite("Your name is %s.", TEXT_DELAY, name);
     
