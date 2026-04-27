@@ -52,8 +52,7 @@ void get_input(char *prompt, char *input, size_t buffer_size, uint16_t delay, bo
 
     if (to_lower)
     {
-        *input = tolower((int)*input);
-        while (*input++)
+        for (; *input; input++)
         {
             *input = tolower((int)*input);
         }
