@@ -56,6 +56,6 @@ void interact(char *prompt, int delay) {
     char buffer[2];
 
     typewrite(prompt, delay);
-    typewrite("\nPress Enter to continue\n", 0);
+    typewrite("\n[Press Enter to continue...]\n", 0);
     fgets(buffer, 2, stdin);
 }
