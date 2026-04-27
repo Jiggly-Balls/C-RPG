@@ -1,7 +1,8 @@
-#include "game/game.h"
-#include "utils/terminal.h"
 #include <stdbool.h>
 
+#include "game/game.h"
+#include "game/menu.h"
+#include "utils/terminal.h"
 
 void menu(void)
 {
