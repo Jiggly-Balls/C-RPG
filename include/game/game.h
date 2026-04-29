@@ -6,7 +6,7 @@
 void game(void);
 void introduction(void);
 
-struct Player
+struct Trader
 {
     char name[50];
     int32_t gold;
@@ -14,6 +14,6 @@ struct Player
     int32_t energy;
 };
 
-extern struct Player player;
+extern struct Trader trader;
 
 #endif
