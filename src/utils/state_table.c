@@ -12,62 +12,60 @@ struct StateTable_States
     StateTable_Func *functions;
 };
 
+static struct StateTable_States *states;
 
 struct StateTable_States* StateTable_ctor(size_t size)
 {
-    struct StateTable_States *table = malloc(sizeof *table);
+    states = malloc(sizeof *states);
 
-    if (!table)
+    if (!states)
     {
         exit(EXIT_FAILURE);
     }
 
-    table->size = size;
+    states->size = size;
 
-    table->keys = malloc(sizeof(uint32_t) * size);
-    if (!table->keys)
+    states->keys = malloc(sizeof(uint32_t) * size);
+    if (!states->keys)
     {
-        free(table);
-        exit(EXIT_FAILURE);
-    }
-    
-    table->functions = malloc(sizeof(StateTable_Func) * size);
-    if (!table->functions)
-    {
-        free(table);
+        free(states);
         exit(EXIT_FAILURE);
     }
     
-    return table;
+    states->functions = malloc(sizeof(StateTable_Func) * size);
+    if (!states->functions)
+    {
+        free(states);
+        exit(EXIT_FAILURE);
+    }
+    
+    return states;
 }
 
 
-void StateTable_dtor(struct StateTable_States *self)
+void StateTable_dtor(void)
 {
-    if (!self)
+    if (!states)
     {
         return;
     }
 
-    free(self->keys);
-    free(self->functions);
-    free(self);
+    free(states->keys);
+    free(states->functions);
+    free(states);
 }
 
 void StateTable_set(
-    struct StateTable_States *self,
     enum StateTable_StateEnums state_enum,
     StateTable_Func function
 )
 {
-    self->functions[state_enum] = *function;
+    states->functions[state_enum] = *function;
 }
 
-
 StateTable_Func* StateTable_get(
-    const struct StateTable_States *self,
     enum StateTable_StateEnums state_enum
 )
 {
-    return &self->functions[state_enum];
+    return &states->functions[state_enum];
 }
