@@ -6,6 +6,8 @@
 #include <stdio.h>
 #include <string.h>
 
+#include "utils/terminal.h"
+
 #ifdef _WIN32
     #include <windows.h>
     #define sleep_ms(ms) Sleep(ms)
@@ -15,7 +17,10 @@
 #endif
 
 
-void typewrite(char *text, int delay, ...)
+enum TextSpeed Terminal_text_speed = FAST;
+
+
+void typewrite(char *text, enum TextSpeed delay, ...)
 {
     char buffer[1024];
     va_list args;
@@ -33,7 +38,7 @@ void typewrite(char *text, int delay, ...)
     }
 }
 
-void get_input(char *prompt, char *input, size_t buffer_size, uint16_t delay, bool to_lower)
+void get_input(char *prompt, char *input, size_t buffer_size, enum TextSpeed delay, bool to_lower)
 {
     if (prompt != NULL)
     {
@@ -65,7 +70,7 @@ void clear_terminal(void)
     fflush(stdout);
 }
 
-void interact(char *prompt, uint16_t delay)
+void interact(char *prompt, enum TextSpeed delay)
 {
     char buffer[2];
 
