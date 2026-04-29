@@ -21,7 +21,7 @@ void menu(void)
         
         if (input == '1')
         {
-            game();
+            Game_loop();
         }
 
         else if (input == '2')

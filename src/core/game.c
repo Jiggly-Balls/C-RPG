@@ -2,7 +2,13 @@
 #include "core/game.h"
 
 
-void game(void)
+void Game_ctor(void);
+void Game_loop(void);
+void Game_dtor(void);
+static void Game_introduction(void);
+
+
+void Game_loop(void)
 {
     char name[50];
     char play_intro;
@@ -44,11 +50,11 @@ void game(void)
 
     if (play_intro == 'y')
     {
-        introduction();
+        Game_introduction();
     }
 }
 
-void introduction(void)
+static void Game_introduction(void)
 {
     char scene_1[] = \
     "The year is 1347."
