@@ -15,7 +15,7 @@ void menu(void)
             "\n3) Exit",
             &input,
             2,
-            TEXT_DELAY,
+            Terminal_text_speed,
             false
         );
         
@@ -36,7 +36,7 @@ void menu(void)
 
         else
         {
-            interact("Invalid option", TEXT_DELAY);
+            interact("Invalid option", Terminal_text_speed);
             clear_terminal();
         }
     }

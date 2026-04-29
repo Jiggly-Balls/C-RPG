@@ -15,22 +15,22 @@ void game(void)
             "Enter your name: ",
             name,
             50,
-            TEXT_DELAY,
+            Terminal_text_speed,
             false
         );
         
-        typewrite("Your name is %s.", TEXT_DELAY, name);
+        typewrite("Your name is %s.", Terminal_text_speed, name);
         get_input(
             " Are you sure of it? (y/n)",
             &name_confirm,
             2,
-            TEXT_DELAY,
+            Terminal_text_speed,
             true
         );
     }
-    typewrite("Your name is %s.", TEXT_DELAY, name);
+    typewrite("Your name is %s.", Terminal_text_speed, name);
     
-    interact("", TEXT_DELAY);
+    interact("", Terminal_text_speed);
 
     clear_terminal();
 
@@ -38,7 +38,7 @@ void game(void)
         "Would you like to play the introduction? (y/n)",
         &play_intro,
         3,
-        TEXT_DELAY,
+        Terminal_text_speed,
         true
     );
 
@@ -79,25 +79,25 @@ void introduction(void)
 
     clear_terminal();
 
-    interact(scene_1, TEXT_DELAY);
+    interact(scene_1, Terminal_text_speed);
     clear_terminal();
 
-    interact(scene_2, TEXT_DELAY);
+    interact(scene_2, Terminal_text_speed);
     clear_terminal();
 
-    interact(scene_3, TEXT_DELAY);
+    interact(scene_3, Terminal_text_speed);
     clear_terminal();
     
-    interact(scene_4, TEXT_DELAY);
+    interact(scene_4, Terminal_text_speed);
     clear_terminal();
 
-    interact(scene_5, TEXT_DELAY);
+    interact(scene_5, Terminal_text_speed);
     clear_terminal();
 
     interact(
         "Watch out for different events that occur which "
         "can alter the prices and different needs of people.",
-         TEXT_DELAY
+         Terminal_text_speed
     );
 
     clear_terminal();
