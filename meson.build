@@ -12,6 +12,7 @@ srcs = [
   'src/utils/state_table.c',
   'src/core/game.c',
   'src/core/menu.c',
+  'src/core/settings.c',
 ]
 
 executable(
