@@ -9,6 +9,7 @@ include = include_directories('include')
 srcs = [
   'src/main.c',
   'src/utils/terminal.c',
+  'src/utils/state_table.c',
   'src/core/game.c',
   'src/core/menu.c',
 ]
