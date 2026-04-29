@@ -17,7 +17,7 @@
 #endif
 
 
-enum TextSpeed Terminal_text_speed = FAST;
+enum TextSpeed Terminal_text_speed = TEXT_SPEED_FAST;
 
 
 void Terminal_typewrite(char *text, enum TextSpeed delay, ...)
@@ -34,7 +34,14 @@ void Terminal_typewrite(char *text, enum TextSpeed delay, ...)
     {
         putchar(*p);
         fflush(stdout);
-        sleep_ms(delay);
+        if (*p == '.') 
+        {
+            sleep_ms(TEXT_SPEED_PAUSE);
+        }
+        else
+        {
+            sleep_ms(delay);
+        }
     }
 }
 
@@ -80,7 +87,10 @@ void Terminal_interact(char *prompt, enum TextSpeed delay)
 {
     char buffer[2];
 
-    Terminal_typewrite(prompt, delay);
-    Terminal_typewrite("\n[Press Enter to continue...]\n", 0);
+    if (prompt != NULL) 
+    {
+        Terminal_typewrite(prompt, delay);    
+    }
+    printf("\n[Press Enter to continue...]\n");
     fgets(buffer, 2, stdin);
 }

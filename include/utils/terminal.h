@@ -7,9 +7,10 @@
 
 
 enum TextSpeed {
-    SLOW   = 50,
-    MEDIUM = 40,
-    FAST   = 30,
+    TEXT_SPEED_SLOW   = 50,
+    TEXT_SPEED_MEDIUM = 40,
+    TEXT_SPEED_FAST   = 30,
+    TEXT_SPEED_PAUSE  = 300,
 };
 
 extern enum TextSpeed Terminal_text_speed;
