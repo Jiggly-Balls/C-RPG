@@ -20,7 +20,7 @@
 enum TextSpeed Terminal_text_speed = TEXT_SPEED_FAST;
 
 
-void Terminal_typewrite(char *text, enum TextSpeed delay, ...)
+void Terminal_typewrite(const char *text, enum TextSpeed delay, ...)
 {
     char buffer[1024];
     va_list args;
@@ -46,7 +46,7 @@ void Terminal_typewrite(char *text, enum TextSpeed delay, ...)
 }
 
 void Terminal_get_input(
-    char *prompt,
+    const char *prompt,
     char *input,
     size_t buffer_size,
     enum TextSpeed delay,
@@ -83,7 +83,7 @@ void Terminal_clear_terminal(void)
     fflush(stdout);
 }
 
-void Terminal_interact(char *prompt, enum TextSpeed delay)
+void Terminal_interact(const char *prompt, enum TextSpeed delay)
 {
     char buffer[2];
 
