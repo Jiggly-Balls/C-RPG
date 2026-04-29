@@ -9,7 +9,7 @@ void menu(void)
     char input;
 
     while (true) {
-        get_input(
+        Terminal_get_input(
             "\n1) Play game"
             "\n2) Settings"
             "\n3) Exit",
@@ -36,8 +36,8 @@ void menu(void)
 
         else
         {
-            interact("Invalid option", Terminal_text_speed);
-            clear_terminal();
+            Terminal_interact("Invalid option", Terminal_text_speed);
+            Terminal_clear_terminal();
         }
     }
 }

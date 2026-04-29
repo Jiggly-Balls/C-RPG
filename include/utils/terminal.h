@@ -14,9 +14,9 @@ enum TextSpeed {
 
 extern enum TextSpeed Terminal_text_speed;
 
-void typewrite(char *text, enum TextSpeed delay, ...);
-void get_input(char *prompt, char *input, size_t buffer_size, enum TextSpeed delay, bool to_lower);
-void clear_terminal(void);
-void interact(char *prompt, enum TextSpeed delay);
+void Terminal_typewrite(char *text, enum TextSpeed delay, ...);
+void Terminal_get_input(char *prompt, char *input, size_t buffer_size, enum TextSpeed delay, bool to_lower);
+void Terminal_clear_terminal(void);
+void Terminal_interact(char *prompt, enum TextSpeed delay);
 
 #endif

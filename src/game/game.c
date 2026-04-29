@@ -10,8 +10,8 @@ void game(void)
 
     while (name_confirm != 'y')
     {
-        clear_terminal();
-        get_input(
+        Terminal_clear_terminal();
+        Terminal_get_input(
             "Enter your name: ",
             name,
             50,
@@ -19,8 +19,8 @@ void game(void)
             false
         );
         
-        typewrite("Your name is %s.", Terminal_text_speed, name);
-        get_input(
+        Terminal_typewrite("Your name is %s.", Terminal_text_speed, name);
+        Terminal_get_input(
             " Are you sure of it? (y/n)",
             &name_confirm,
             2,
@@ -28,13 +28,13 @@ void game(void)
             true
         );
     }
-    typewrite("Your name is %s.", Terminal_text_speed, name);
+    Terminal_typewrite("Your name is %s.", Terminal_text_speed, name);
     
-    interact("", Terminal_text_speed);
+    Terminal_interact("", Terminal_text_speed);
 
-    clear_terminal();
+    Terminal_clear_terminal();
 
-    get_input(
+    Terminal_get_input(
         "Would you like to play the introduction? (y/n)",
         &play_intro,
         3,
@@ -77,28 +77,27 @@ void introduction(void)
     "\nYou will become the wealthiest person this world has ever seen."
     "\n\nA TRILLIONAIRE.";
 
-    clear_terminal();
+    Terminal_clear_terminal();
 
-    interact(scene_1, Terminal_text_speed);
-    clear_terminal();
+    Terminal_interact(scene_1, Terminal_text_speed);
+    Terminal_clear_terminal();
 
-    interact(scene_2, Terminal_text_speed);
-    clear_terminal();
+    Terminal_interact(scene_2, Terminal_text_speed);
+    Terminal_clear_terminal();
 
-    interact(scene_3, Terminal_text_speed);
-    clear_terminal();
+    Terminal_interact(scene_3, Terminal_text_speed);
+    Terminal_clear_terminal();
     
-    interact(scene_4, Terminal_text_speed);
-    clear_terminal();
+    Terminal_interact(scene_4, Terminal_text_speed);
+    Terminal_clear_terminal();
 
-    interact(scene_5, Terminal_text_speed);
-    clear_terminal();
+    Terminal_interact(scene_5, Terminal_text_speed);
+    Terminal_clear_terminal();
 
-    interact(
+    Terminal_interact(
         "Watch out for different events that occur which "
         "can alter the prices and different needs of people.",
          Terminal_text_speed
     );
-
-    clear_terminal();
+    Terminal_clear_terminal();
 }

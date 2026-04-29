@@ -20,7 +20,7 @@
 enum TextSpeed Terminal_text_speed = FAST;
 
 
-void typewrite(char *text, enum TextSpeed delay, ...)
+void Terminal_typewrite(char *text, enum TextSpeed delay, ...)
 {
     char buffer[1024];
     va_list args;
@@ -38,7 +38,7 @@ void typewrite(char *text, enum TextSpeed delay, ...)
     }
 }
 
-void get_input(
+void Terminal_get_input(
     char *prompt,
     char *input,
     size_t buffer_size,
@@ -48,9 +48,9 @@ void get_input(
 {
     if (prompt != NULL)
     {
-        typewrite(prompt, delay);
+        Terminal_typewrite(prompt, delay);
     }
-    typewrite("\n>>> ", delay);
+    Terminal_typewrite("\n>>> ", delay);
     fgets(input, buffer_size, stdin);
     input[strcspn(input, "\n")] = 0;
 
@@ -70,17 +70,17 @@ void get_input(
     }
 }
 
-void clear_terminal(void)
+void Terminal_clear_terminal(void)
 {
     printf("\033[2J\033[H");
     fflush(stdout);
 }
 
-void interact(char *prompt, enum TextSpeed delay)
+void Terminal_interact(char *prompt, enum TextSpeed delay)
 {
     char buffer[2];
 
-    typewrite(prompt, delay);
-    typewrite("\n[Press Enter to continue...]\n", 0);
+    Terminal_typewrite(prompt, delay);
+    Terminal_typewrite("\n[Press Enter to continue...]\n", 0);
     fgets(buffer, 2, stdin);
 }
