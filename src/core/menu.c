@@ -1,7 +1,7 @@
 #include <stdbool.h>
 
-#include "game/game.h"
-#include "game/menu.h"
+#include "core/game.h"
+#include "core/menu.h"
 #include "utils/terminal.h"
 
 void menu(void)

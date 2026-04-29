@@ -1,5 +1,5 @@
 #include "utils/terminal.h"
-#include "game/game.h"
+#include "core/game.h"
 
 
 void game(void)

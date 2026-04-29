@@ -1,4 +1,4 @@
-#include "game/menu.h"
+#include "core/menu.h"
 
 
 int main(void)
