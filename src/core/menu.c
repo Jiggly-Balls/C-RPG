@@ -4,7 +4,7 @@
 #include "core/menu.h"
 #include "utils/terminal.h"
 
-void menu(void)
+void Menu_loop(void)
 {
     char input;
 
