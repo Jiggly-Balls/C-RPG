@@ -38,7 +38,13 @@ void typewrite(char *text, enum TextSpeed delay, ...)
     }
 }
 
-void get_input(char *prompt, char *input, size_t buffer_size, enum TextSpeed delay, bool to_lower)
+void get_input(
+    char *prompt,
+    char *input,
+    size_t buffer_size,
+    enum TextSpeed delay,
+    bool to_lower
+)
 {
     if (prompt != NULL)
     {
