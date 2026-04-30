@@ -5,8 +5,7 @@
 #include "utils/state_table.h"
 
 
-struct StateTable_States
-{
+struct StateTable_States {
     size_t size;
     uint32_t *keys;
     StateTable_Func *functions;
@@ -14,27 +13,23 @@ struct StateTable_States
 
 static struct StateTable_States *states;
 
-struct StateTable_States* StateTable_ctor(size_t size)
-{
+struct StateTable_States* StateTable_ctor(size_t size) {
     states = malloc(sizeof *states);
 
-    if (!states)
-    {
+    if (!states) {
         exit(EXIT_FAILURE);
     }
 
     states->size = size;
 
     states->keys = malloc(sizeof(uint32_t) * size);
-    if (!states->keys)
-    {
+    if (!states->keys) {
         free(states);
         exit(EXIT_FAILURE);
     }
     
     states->functions = malloc(sizeof(StateTable_Func) * size);
-    if (!states->functions)
-    {
+    if (!states->functions) {
         free(states);
         exit(EXIT_FAILURE);
     }
@@ -43,10 +38,8 @@ struct StateTable_States* StateTable_ctor(size_t size)
 }
 
 
-void StateTable_dtor(void)
-{
-    if (!states)
-    {
+void StateTable_dtor(void) {
+    if (!states) {
         return;
     }
 
@@ -58,14 +51,12 @@ void StateTable_dtor(void)
 void StateTable_set(
     enum StateTable_StateEnums state_enum,
     StateTable_Func function
-)
-{
+) {
     states->functions[state_enum] = *function;
 }
 
 StateTable_Func* StateTable_get(
     enum StateTable_StateEnums state_enum
-)
-{
+) {
     return &states->functions[state_enum];
 }

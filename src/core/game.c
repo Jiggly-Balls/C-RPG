@@ -8,14 +8,12 @@ void Game_dtor(void);
 static void Game_introduction(void);
 
 
-void Game_loop(void)
-{
+void Game_loop(void) {
     char name[50];
     char play_intro;
     char name_confirm = 'n';
 
-    while (name_confirm != 'y')
-    {
+    while (name_confirm != 'y') {
         Terminal_clear_terminal();
         Terminal_get_input(
             "Enter your name: ",
@@ -48,14 +46,12 @@ void Game_loop(void)
         true
     );
 
-    if (play_intro == 'y')
-    {
+    if (play_intro == 'y') {
         Game_introduction();
     }
 }
 
-static void Game_introduction(void)
-{
+static void Game_introduction(void) {
     char scene_1[] = \
     "The year is 1347."
     "\n\nThe world runs on gold, and those without it are forgotten by history.";

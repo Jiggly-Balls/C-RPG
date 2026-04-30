@@ -4,8 +4,7 @@
 #include "core/menu.h"
 #include "utils/terminal.h"
 
-void Menu_loop(void)
-{
+void Menu_loop(void) {
     char input;
 
     while (true) {
@@ -19,23 +18,19 @@ void Menu_loop(void)
             false
         );
         
-        if (input == '1')
-        {
+        if (input == '1') {
             Game_loop();
         }
 
-        else if (input == '2')
-        {
+        else if (input == '2') {
 
         }
 
-        else if (input == '3')
-        {
+        else if (input == '3') {
             break;
         }
 
-        else
-        {
+        else {
             Terminal_interact("Invalid option", Terminal_text_speed);
             Terminal_clear_terminal();
         }

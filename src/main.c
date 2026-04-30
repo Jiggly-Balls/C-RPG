@@ -3,8 +3,7 @@
 #include "core/settings.h"
 #include "utils/state_table.h"
 
-int main(void)
-{
+int main(void) {
     struct StateFuncMap {
         enum StateTable_StateEnums state;
         StateTable_Func function;
@@ -18,14 +17,16 @@ int main(void)
 
     StateTable_ctor(StateEnums_TOTAL_STATES);
 
-    for (struct StateFuncMap *entry = function_table; entry->function != NULL; entry++)
-    {
+    for (
+        struct StateFuncMap *entry = function_table;
+        entry->function != NULL;
+        entry++
+    ) {
         StateTable_set(entry->state, entry->function);
     }
 
     enum StateTable_StateEnums StateTable_current_state = StateEnums_MENU;
-    while (1)
-    {
+    while (1) {
         StateTable_Func *current_state_func = StateTable_get(StateTable_current_state);
         (*current_state_func)();
     }

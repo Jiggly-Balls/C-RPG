@@ -20,8 +20,7 @@
 enum TextSpeed Terminal_text_speed = TEXT_SPEED_FAST;
 
 
-void Terminal_typewrite(const char *text, enum TextSpeed delay, ...)
-{
+void Terminal_typewrite(const char *text, enum TextSpeed delay, ...) {
     char buffer[1024];
     va_list args;
     va_start(args, delay);
@@ -30,16 +29,13 @@ void Terminal_typewrite(const char *text, enum TextSpeed delay, ...)
 
     va_end(args);
     
-    for (char *p = buffer; *p; p++)
-    {
+    for (char *p = buffer; *p; p++) {
         putchar(*p);
         fflush(stdout);
-        if (*p == '.') 
-        {
+        if (*p == '.') {
             sleep_ms(TEXT_SPEED_PAUSE);
         }
-        else
-        {
+        else {
             sleep_ms(delay);
         }
     }
@@ -51,44 +47,36 @@ void Terminal_get_input(
     size_t buffer_size,
     enum TextSpeed delay,
     bool to_lower
-)
-{
-    if (prompt != NULL)
-    {
+) {
+    if (prompt != NULL) {
         Terminal_typewrite(prompt, delay);
     }
     Terminal_typewrite("\n>>> ", delay);
     fgets(input, buffer_size, stdin);
     input[strcspn(input, "\n")] = 0;
 
-    if (buffer_size - 1 == strlen(input))
-    {
+    if (buffer_size - 1 == strlen(input)) {
         int c;
         while ((c = getchar()) != '\n' && c != EOF)
             ;
     }
 
-    if (to_lower)
-    {
-        for (; *input; input++)
-        {
+    if (to_lower) {
+        for (; *input; input++) {
             *input = tolower((int)*input);
         }
     }
 }
 
-void Terminal_clear_terminal(void)
-{
+void Terminal_clear_terminal(void) {
     printf("\033[2J\033[H");
     fflush(stdout);
 }
 
-void Terminal_interact(const char *prompt, enum TextSpeed delay)
-{
+void Terminal_interact(const char *prompt, enum TextSpeed delay) {
     char buffer[2];
 
-    if (prompt != NULL) 
-    {
+    if (prompt != NULL) {
         Terminal_typewrite(prompt, delay);    
     }
     printf("\n[Press Enter to continue...]\n");
