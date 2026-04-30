@@ -1,3 +1,5 @@
+#include <stdint.h>
+
 #include "utils/terminal.h"
 #include "core/game.h"
 
@@ -6,6 +8,10 @@ void Game_ctor(void);
 void Game_loop(void);
 void Game_dtor(void);
 static void Game_introduction(void);
+
+struct Game {
+    uint32_t current_day;
+};
 
 
 void Game_loop(void) {
